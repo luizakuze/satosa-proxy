@@ -1,4 +1,4 @@
-BASE_URL: https:/localhost:5001
+BASE: https://localhost:5002
 
 COOKIE_STATE_NAME: "SATOSA_STATE"
 CONTEXT_STATE_DELETE: true
@@ -7,17 +7,17 @@ STATE_ENCRYPTION_KEY: "asdASD123"
 cookies_samesite_compat:
   - ["SATOSA_STATE", "SATOSA_STATE_LEGACY"]
 
-INTERNAL_ATTRIBUTES: "internal_attributes.yaml"
+INTERNAL_ATTRIBUTES: "saml2-social/internal_attributes.yaml"
 
 BACKEND_MODULES:
-  - "plugins/backends/google_backend.yaml"
-  - "plugins/backends/facebook_backend.yaml"
+  - "saml2-social/plugins/google_backend.yaml"
+  - "saml2-social/plugins/facebook_backend.yaml"
 
 FRONTEND_MODULES:
-  - "plugins/frontends/saml2_frontend.yaml"
+  - "saml2-social/plugins/saml2_frontend.yaml"
 
-MICRO_SERVICES:
-  - "plugins/microservices/static_attributes.yaml"
+# MICRO_SERVICES:
+#   - "plugins/microservices/static_attributes.yaml"
 
 LOGGING:
   version: 1

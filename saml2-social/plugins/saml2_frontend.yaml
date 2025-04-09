@@ -27,19 +27,19 @@ config:
     - {contact_type: technical, email_address: 'mailto:technical@example.com', given_name: Technical}
     - {contact_type: support, email_address: 'mailto:support@example.com', given_name: Support}
     - {contact_type: other, email_address: 'mailto:security@example.com', given_name: Security, extension_attributes: {'xmlns:remd': 'http://refeds.org/metadata', 'remd:contactType': 'http://refeds.org/metadata/contactType/security'}}
-    key_file: frontend.key
-    cert_file: frontend.crt
+    key_file: ./saml2-social/pki/frontend.key
+    cert_file: ./saml2-social/pki/frontend.crt
     metadata:
-      local: [sp.xml]
+      local: [sp/sp.xml]
 
-    entityid: https://sp-saml:5001/Saml2IDP/proxy.xml
+    entityid: https://localhost:5002/Saml2IDP/proxy.xml
     accepted_time_diff: 60
     service:
       idp:
         endpoints:
           single_sign_on_service:
-            'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST': https://sp-saml:5001/Saml2IDP/sso/post
-            'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect': https://sp-saml:5001/Saml2IDP/sso/redirect
+            'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST': https://localhost:5002/Saml2IDP/sso/post
+            'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect': https://localhost:5002/Saml2IDP/sso/redirect
         name: Proxy IdP
         ui_info:
           display_name:

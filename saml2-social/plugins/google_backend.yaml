@@ -10,7 +10,7 @@ config:
     client_metadata:
       client_id: <client id>
       client_secret: <client secret>
-      redirect_uris: [https://localhost:5001/google]
+      redirect_uris: [https://localhost:5002/google]
     userinfo_request_method: GET
   entity_info:
     organization:

@@ -12,14 +12,20 @@ public class HomeController : Controller
         return View(); // Views/Home/Index.cshtml
     }
 
-    [HttpPost("/")]
-    public IActionResult Index(string? action)
+   [HttpPost("/")]
+    public IActionResult Index(string? idp)
     {
-        return Challenge(new AuthenticationProperties
+        var props = new AuthenticationProperties
         {
             RedirectUri = "/users"
-        });
-    }
+        };
 
+        if (!string.IsNullOrEmpty(idp))
+        {
+            props.Items["idp"] = idp;
+        }
+
+        return Challenge(props);
+    }
 
 }

@@ -55,14 +55,26 @@ internal class Program
                 MetadataPublishOverride = MetadataPublishOverrideType.PublishSigning
             });
 
-            // IdP direto (SATOSA)
+
+            // --------- Identity Providers --------- 
+            // Poderia ter um DiscoveryService para descobrir o IdP
+            // e redirecionar para o IdP correto
             opt.IdentityProviders.Add(new IdentityProvider(
-                new EntityId("https://proxy.exemplo.org/SAML2/metadata"), opt.SPOptions)
+                new EntityId("https://localhost:5002/Saml2IDP/google/proxy.xml"), opt.SPOptions)
             {
                 LoadMetadata = true,
-                MetadataLocation = "https://proxy.exemplo.org/SAML2/metadata",
+                MetadataLocation = "https://localhost:5002/Saml2IDP/google/proxy.xml",
                 AllowUnsolicitedAuthnResponse = false
             });
+
+            opt.IdentityProviders.Add(new IdentityProvider(
+                new EntityId("https://localhost:5002/Saml2IDP/facebook/proxy.xml"), opt.SPOptions)
+            {
+                LoadMetadata = true,
+                MetadataLocation = "https://localhost:5002/Saml2IDP/facebook/proxy.xml",
+                AllowUnsolicitedAuthnResponse = false
+            });
+
         });
 
         builder.Services.AddControllersWithViews();
