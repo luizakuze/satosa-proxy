@@ -1,4 +1,4 @@
-BASE_URL: https://sp-csharp-local:5001
+BASE_URL: https:/localhost:5001
 
 COOKIE_STATE_NAME: "SATOSA_STATE"
 CONTEXT_STATE_DELETE: true

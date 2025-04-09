@@ -1,8 +1,8 @@
 module: satosa.backends.oauth.FacebookBackend
 name: facebook
 config:
-  authz_page: <name>
-  base_url: <base_url>
+  authz_page: facebook
+  base_url: https://localhost:5001
   client_config:
     client_id: <client_id>
   # See https://developers.facebook.com/docs/facebook-login for

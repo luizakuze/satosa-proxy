@@ -32,12 +32,14 @@ config:
     metadata:
       local: [sp.xml]
 
-    entityid: <base_url>/<name>/proxy.xml
+    entityid: https://sp-saml:5001/Saml2IDP/proxy.xml
     accepted_time_diff: 60
     service:
       idp:
         endpoints:
-          single_sign_on_service: []
+          single_sign_on_service:
+            'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST': https://sp-saml:5001/Saml2IDP/sso/post
+            'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect': https://sp-saml:5001/Saml2IDP/sso/redirect
         name: Proxy IdP
         ui_info:
           display_name:
