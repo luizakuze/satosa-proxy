@@ -7,7 +7,7 @@ config:
   idp_config:
     metadata:
       local:
-        - "/home/lulu/gidlab/satosa-proxy/saml2-social/metadata/sp.xml"
+        - "saml2-social/metadata/sp.xml"
 
     key_file: saml2-social/pki/frontend.key
     cert_file: saml2-social/pki/frontend.crt
