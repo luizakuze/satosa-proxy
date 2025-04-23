@@ -1,7 +1,11 @@
 ## Satosa proxy: fluxo SAML2 ↔ login social
 
-Esta aplicação contém um provedor de serviço (SP) ASP.NET Core que utiliza o protocolo **SAML2** para realizar autenticação com diferentes provedores de login social que utilizam **OAuth2** e **OpenID Connect (OIDC)**: Facebook e Google.
+Esta aplicação contém um provedor de serviço (SP) ASP.NET Core que utiliza o protocolo **SAML2** para realizar autenticação com diferentes provedores de login social que utilizam **OAuth2** e **OpenID Connect (OIDC)**: Facebook e Google. 
 
+### Ferramentas
+- [Biblioteca Sustainsys (C#)](https://saml2.sustainsys.com/en/v2/)
+- [Proxy SATOSA](https://github.com/IdentityPython/SATOSA)
+ 
 ### Estrutura do projeto
 ```bash
 .
@@ -77,7 +81,7 @@ Esta aplicação contém um provedor de serviço (SP) ASP.NET Core que utiliza o
 
 ### Script gerador de metadados
 
-Caso deseje obter os metadados gerados pelo SATOSA para cada backend configurado, execute:
+Caso deseje obter os metadados gerados pelo satosa para cada backend configurado, execute:
 
 ```bash
 satosa-saml-metadata saml2-social/proxy_conf.yaml \
