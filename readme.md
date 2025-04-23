@@ -61,8 +61,9 @@ Esta aplicação contém um provedor de serviço (SP) ASP.NET Core que utiliza o
 3. **Execute a aplicação do SP (ASP.NET Core):**
 
     ```bash
-    dotnet restore saml-csharp.csproj
-    dotnet run saml-csharp.csproj
+    dotnet restore sp/saml-csharp.csproj
+    dotnet run --project sp/saml-csharp.csproj
+
     ```
 
 4. **Inicie o SATOSA com Gunicorn usando o script de execução:**
