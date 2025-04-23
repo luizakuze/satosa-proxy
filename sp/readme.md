@@ -1,7 +1,7 @@
 # Autenticação com SAML2 em C#  
 
  
-Esta aplicação ASP.NET Core implementa um provedor de serviço (SP) que autentica usuários via protocolo SAML2, utilizando a biblioteca Sustainsys.Saml2 e um Discovery Service (DS) para conectar-se aos provedores de identidade (IdP) da federação.
+Esta aplicação ASP.NET Core implementa um provedor de serviço (SP) que autentica usuários via protocolo SAML2, utilizando a biblioteca Sustainsys.Saml2.
 
 ### Sumário
  
@@ -11,7 +11,7 @@ Esta aplicação ASP.NET Core implementa um provedor de serviço (SP) que autent
       - [Gerar novos certificados](#1-gerar-novos-certificados)
       - [Configurações no arquivo `appsettings.json`](#2-configurações-do-arquivo-appsettingsjson)
 
-## Estrutura do Projeto
+## Estrutura do Provedor de Serviço
 
 ```bash
 .
@@ -36,29 +36,6 @@ Esta aplicação ASP.NET Core implementa um provedor de serviço (SP) que autent
 ├── metadata-sp.xml              # Metadado do SP
 └── readme.md                    
 ```
-
-## Instalação
-
-1. Clone o repositório:
-
-   ```sh
-   git clone https://git.rnp.br/gidlab/saml-csharp
-   ```
-2. Adicione a seguinte linha ao arquivo  `/etc/hosts` (necessário para a aplicação de teste):
-
-    ```sh
-    127.0.0.1 sp-csharp-local
-    ```
-3. Instale as dependências:
-
-   ```sh
-   dotnet restore saml-csharp.csproj
-   ```
-4. Execute a aplicação:
-
-   ```sh
-   dotnet run saml-csharp.csproj
-   ``` 
  
 
 ## Preparando ambiente para novo contexto

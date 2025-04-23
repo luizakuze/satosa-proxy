@@ -1,0 +1,58 @@
+module: satosa.frontends.saml2.SAMLMirrorFrontend
+name: Mirror
+config:
+  entityid_endpoint: true
+  acs_selection_strategy: prefer_matching_host
+
+  idp_config:
+    metadata:
+      local:
+        - "/home/lulu/gidlab/satosa-proxy/saml2-social/metadata/sp.xml"
+
+    key_file: saml2-social/pki/frontend.key
+    cert_file: saml2-social/pki/frontend.crt
+    encryption_keypairs:
+      - key_file: saml2-social/pki/frontend.key
+        cert_file: saml2-social/pki/frontend.crt
+
+    entityid: "https://localhost:5002/Mirror/proxy"
+    accepted_time_diff: 60
+
+    service:
+      idp:
+        endpoints:
+          single_sign_on_service: []   # o Mirror cria as URLs dinamicamente
+        name_id_format:
+          - urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
+          - urn:oasis:names:tc:SAML:2.0:nameid-format:transient
+
+        # 1. Só ClassRef válido
+        authn_context_mapping:
+          default-LoA: urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
+          LoA1:        urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
+
+        # 2. NÃO mandar DeclRef → dicionário vazio
+        authn_context_decl_mapping: {}
+
+        sign_assertion: true
+        sign_response:  true
+
+        policy:
+          default:
+            attribute_restrictions: null
+            fail_on_missing_requested: false
+            lifetime: { minutes: 15 }
+            name_form: urn:oasis:names:tc:SAML:2.0:attrname-format:uri
+            encrypt_assertion: false
+            encrypted_advice_attributes: false
+
+  # LoA que chega dos back-ends → LoA interno usado acima
+  acr_mapping:
+    "":                              default-LoA
+    "https://accounts.google.com":   LoA1
+
+  # Endpoints públicos do Mirror
+  endpoints:
+    single_sign_on_service:
+      "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect": sso/redirect
+      "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST":     sso/post

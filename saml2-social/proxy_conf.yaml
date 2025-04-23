@@ -1,4 +1,5 @@
-BASE: https://localhost:5002
+# saml2-social/proxy_conf.yaml
+BASE: "https://localhost:5002"
 
 COOKIE_STATE_NAME: "SATOSA_STATE"
 CONTEXT_STATE_DELETE: true
@@ -9,15 +10,16 @@ cookies_samesite_compat:
 
 INTERNAL_ATTRIBUTES: "saml2-social/internal_attributes.yaml"
 
+CUSTOM_PLUGIN_MODULE_PATHS:
+  - "saml2-social/plugins/frontendzs"
+  - "saml2-social/plugins/backends"
+ 
 BACKEND_MODULES:
-  - "saml2-social/plugins/google_backend.yaml"
   - "saml2-social/plugins/facebook_backend.yaml"
-
+  - "saml2-social/plugins/google_backend.yaml"
+ 
 FRONTEND_MODULES:
-  - "saml2-social/plugins/saml2_frontend.yaml"
-
-# MICRO_SERVICES:
-#   - "plugins/microservices/static_attributes.yaml"
+  - "saml2-social/plugins/mirror_frontend.yaml"
 
 LOGGING:
   version: 1
@@ -30,21 +32,26 @@ LOGGING:
       stream: "ext://sys.stdout"
       level: DEBUG
       formatter: simple
+    syslog:
+      class: logging.handlers.SysLogHandler
+      address: "/dev/log"
+      level: DEBUG
+      formatter: simple
     debug_file:
       class: logging.FileHandler
-      filename: satosa-debug.log
+      filename: logs/satosa-debug.log
       encoding: utf8
       level: DEBUG
       formatter: simple
     error_file:
       class: logging.FileHandler
-      filename: satosa-error.log
+      filename: logs/satosa-error.log
       encoding: utf8
       level: ERROR
       formatter: simple
     info_file:
       class: logging.handlers.RotatingFileHandler
-      filename: satosa-info.log
+      filename: logs/satosa-info.log
       encoding: utf8
       maxBytes: 10485760 # 10MB
       backupCount: 20

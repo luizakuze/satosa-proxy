@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>@ViewData["Title"]</title>
@@ -58,20 +59,26 @@
         }
     </style>
 </head>
+
 <body>
     <div class="auth-container">
         <h1>Provedor de Serviço</h1>
         <p style="margin-top: -10px; margin-bottom: 20px; color: #666; font-size: 14px;">
             Desenvolvido em <strong>C#</strong>
         </p>
-        <form method="post" action="/?idp=https://localhost:5001/Saml2IDP/google/proxy.xml">
-            <button class="auth-button" type="submit">Login com Google</button>
+
+        <form method="post" action="/">
+            <button type="submit" name="idp" value="facebook" class="auth-button facebook">
+                Entrar com Facebook
+            </button>
         </form>
 
-        <form method="post" action="/?idp=https://localhost:5001/Saml2IDP/facebook/proxy.xml">
-            <button class="auth-button" type="submit">Login com Facebook</button>
+        <form method="post" action="/">
+            <button type="submit" name="idp" value="google" class="auth-button google">
+                Entrar com Google
+            </button>
         </form>
-
     </div>
 </body>
+
 </html>

@@ -1,55 +1,61 @@
 attributes:
   address:
     openid: [address.street_address]
-    orcid: [address]
+    orcid: [addresses.str]
     saml: [postaladdress]
-  displayname:
+  displayName:
     openid: [nickname]
-    orcid: [displayname]
+    orcid: [name.credit-name]
     github: [login]
     saml: [displayName]
-  edupersontargetedid:
+  eduPersonTargetedID:
     facebook: [id]
     linkedin: [id]
-    orcid: [edupersontargetedid]
+    orcid: [orcid]
     github: [id]
     openid: [sub]
-    saml: [eduPersonTargetedID]
-  edupersonprincipalname:
-    openid: [email]
-    facebook: [email]
-    github: [email]
-    saml: [eduPersonPrincipalName]
-  uid:
-    github: [login]
+    saml: [eduPersonTargetedID, ePTID, eptid]
+  eduPersonPrincipalName:
     facebook: [id]
+    linkedin: [id]
+    orcid: [orcid]
+    github: [id]
     openid: [sub]
-    saml: [uid]
-  givenname:
+    saml: [eduPersonPrincipalName, ePPN, eppn]
+  givenName:
     facebook: [first_name]
     linkedin: [email-address]
-    orcid: [givenname]
+    orcid: [name.given-names.value]
     openid: [given_name]
-    saml: [givenName]
+    saml: [givenName, gn]
   mail:
     facebook: [email]
     linkedin: [email-address]
-    orcid: [mail]
+    orcid: [emails.str]
     github: [email]
     openid: [email]
-    saml: [email, emailAddress, mail]
-  name:
+    saml: [email, emailAdress, mail]
+  cn:
     facebook: [name]
-    orcid: [name]
+    orcid: [name.credit-name]
     github: [name]
     openid: [name]
-    saml: [cn]
-  surname:
+    saml: [cn, commonName]
+  surName:
     facebook: [last_name]
     linkedin: [lastName]
-    orcid: [surname]
+    orcid: [name.family-name.value]
     openid: [family_name]
-    saml: [sn, surname]
-
-user_id_from_attrs: [edupersontargetedid]
-user_id_to_attr: edupersontargetedid
+    saml: [sn, surName]
+  brEduAffiliationType:
+    saml: [brEduAffiliationType, braff]
+  eduPersonAffiliation:
+    saml: [eduPersonAffiliation, ePA]
+  eduPersonEntitlement:
+    saml: [eduPersonEntitlement, ePE]
+  brPersonCPF:
+    saml: [brPersonCPF, brpersoncpf]
+  schacDateOfBirth:
+    saml: [schacDateOfBirth]
+user_id_from_attrs: [eduPersonTargetedID]
+user_id_to_attr: eduPersonTargetedID

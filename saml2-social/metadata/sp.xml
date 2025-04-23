@@ -1,19 +1,30 @@
 <EntityDescriptor xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
     xmlns="urn:oasis:names:tc:SAML:2.0:metadata" cacheDuration="PT1H"
-    entityID="https://sp-csharp-local:5001/Saml2" ID="_002b02326e6644c5831d1806f3b90189">
+    entityID="https://localhost:5001/Saml2" ID="_bc4321e3c65b44fb903078c3de4b2f8f">
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="#_bc4321e3c65b44fb903078c3de4b2f8f">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>1CMcdrwZyYyqCSRtR5BIpgi4rJ30LGynQGiarA58BJM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>
+            09eZlHTqSaQ14hoj9UNb/MrYxTbNYKgg9h61nm0/Vjd0PISMQnhw1z5uso9ysaOPLgYnN7Rruny8Ju/Vc4HDVl+ihh+NwifNxmx+PnV2gawz/H6rKxzZtq/oMv3OGZQLEdvXzAnKOy9RUib+WqqX9BvbrH5lNE9XAWVw8XmR3cHzQY5C1r7gdHdrDDlMqUJBhQU8LCBVv+tKHd1V62BkVzORm9mx3k/IN8gusqPPWOlpzMnr8jHdOYaz5N1H17XpcMPd2mDBtfgnKOkyMAAQTDgHuOs759ijEF1+7jzVM1MNMIej2QmYoM8BoUQsZRPItaYK5h7zlaFuK/TvSMRPrg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>
+                    MIIDazCCAlOgAwIBAgIURuMZR50MypoNmeC5pdJhKXsLvZQwDQYJKoZIhvcNAQELBQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAeFw0yNTAzMTgyMTMwMjVaFw0yNjAzMTgyMTMwMjVaMEUxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDk7JssDTN67iT1iJP7iTx4rftEZF85qlobHXjPhDwZNjdAZLpH9dB+3cfF+1pVx2eHoTvdSz0nn1xwrALqxNWOI0qK011sR18KKH6fKoTqbr2w5HqJq22E9k9BwahxQg/6fDQqJHbt/NpxSxIv/q7C9jPxbgj84CAfYiX5n4uRx58i8ruA8tVz55nahyKjFYRxHWpGp8q7Xy73fyeRtIy1a3m0UqRlDPwffYzwA4/xg7Swnvv5Cukww4UZpg7LXbvLBZA92MLjmJTbhAUSJpcJiowAafODbDS7D9AKYvXqFw0xTos0EliIfpfH1CHhRIFuK/YlX/ZJgqkZ5K0YZhnvAgMBAAGjUzBRMB0GA1UdDgQWBBSO/DUsMXajwKF78Pb0R2EfP3WW3zAfBgNVHSMEGDAWgBSO/DUsMXajwKF78Pb0R2EfP3WW3zAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAO/hmrlpqUhRNa5MDpZ22gUhgY+4KopPMEMNTWtXueaetbleLGpfEIXd3DCanCDweDGXV2x6nxd3SXbtbzq4LTtEJw3g6JqAd95ltFmsfPGe67+9fsqoe0hEioxlvuu6kCQnjbdGxyjRI0/mi2jKJWGVz41HEDWJdoBCo/LyMWdQUX8P4JjIKEhOPoaCT9z7K2CsERnSpG4EVMcqFB8Z16AOAwMPJcbxFWbDA3BhjVxnD3Jh6G1GwGSPY+lXEQba/HBm7v2r2NHs5u2VGoFHBZthUMQZ+LtWGqs8LFEOMAVT5q/oRwrRFkcWD7gsZAMsTgE3GREK8qOUpnoVzc30g5</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
     <SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true"
         protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-        <Extensions>
-
-            <mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
-                <mdui:DisplayName xml:lang="en">SP C#</mdui:DisplayName>
-                <mdui:Description xml:lang="en">Provedor de serviços C#</mdui:Description> 
-            </mdui:UIInfo>
-
-            <DiscoveryResponse xmlns="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-                Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-                Location="https://sp-csharp-local:5001/Saml2/SignIn" isDefault="true" index="0" />
-        </Extensions>
         <KeyDescriptor use="encryption">
             <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
                 <X509Data>
@@ -31,21 +42,10 @@
             </KeyInfo>
         </KeyDescriptor>
         <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-            Location="https://sp-csharp-local:5001/Saml2/Logout" />
+            Location="https://localhost:5001/Saml2/Logout" />
         <AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-            Location="https://sp-csharp-local:5001/Saml2/Acs" isDefault="true" index="0" />
+            Location="https://localhost:5001/Saml2/Acs" isDefault="true" index="0" />
         <AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
-            Location="https://sp-csharp-local:5001/Saml2/Acs" isDefault="false" index="1" />
+            Location="https://localhost:5001/Saml2/Acs" isDefault="false" index="1" />
     </SPSSODescriptor>
-    <Organization>
-        <OrganizationName xml:lang="pt-br">GIdLab</OrganizationName>
-        <OrganizationDisplayName xml:lang="pt-br">GIdLab</OrganizationDisplayName>
-        <OrganizationURL xml:lang="pt-br">http://gidlab.rnp.br/</OrganizationURL>
-    </Organization>
-    <ContactPerson contactType="technical">
-        <Company>RNP</Company>
-        <GivenName>GIdLab</GivenName>
-        <SurName>Equipe</SurName>
-        <EmailAddress>gidlab@rnp.br</EmailAddress>
-    </ContactPerson>
 </EntityDescriptor>

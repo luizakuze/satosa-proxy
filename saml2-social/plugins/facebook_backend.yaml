@@ -4,28 +4,26 @@ config:
   authz_page: facebook
   base_url: https://localhost:5002
   client_config:
-    client_id: <client_id>
-  # See https://developers.facebook.com/docs/facebook-login for
-  # information on valid values for auth_type
+    client_id: <client-id>
   auth_type: []
-  scope: [public_profile, email]
+  scope: [public_profile] #, email
   fields: [id, name, first_name, last_name, middle_name, picture, email, verified, gender, timezone, locale, updated_time]
   response_type: code
   server_info:
     authorization_endpoint: 'https://www.facebook.com/dialog/oauth'
     token_endpoint: 'https://graph.facebook.com/v3.3/oauth/access_token'
     graph_endpoint: 'https://graph.facebook.com/v3.3/me'
-  client_secret: <client_secret>
+  client_secret: <client-secret>
   entity_info:
-    organization:
-      display_name:
-      - ["Facebook", "en"]
-      name:
-      - ["Facebook", "en"]
-      url:
-      - ["https://www.facebook.com/", "en"]
-    ui_info:
-      description:
-      - ["Facebook oauth", "en"]
-      display_name:
-      - ["Facebook", "en"]
+      organization:
+        display_name:
+        - ["Facebook", "en"]
+        name:
+        - ["Facebook", "en"]
+        url:
+        - ["https://www.facebook.com/", "en"]
+      ui_info:
+        description:
+        - ["Facebook oauth", "en"]
+        display_name:
+        - ["Facebook", "en"]
