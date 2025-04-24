@@ -106,7 +106,7 @@ internal class Program
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            IdentityModelEventSource.ShowPII = true; 
+            IdentityModelEventSource.ShowPII = true;
         }
 
         app.UseRouting();
@@ -115,6 +115,7 @@ internal class Program
         app.UseAuthorization();
 
         app.MapDefaultControllerRoute();
-        app.Run();
+        app.Run(spUrl);
+
     }
 }
