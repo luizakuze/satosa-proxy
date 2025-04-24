@@ -62,15 +62,22 @@ Esta aplicação contém um provedor de serviço (SP) ASP.NET Core que utiliza o
     - **Facebook:**  
     Acesse o [Facebook for Developers](https://developers.facebook.com/), registre um novo aplicativo e insira as credenciais no arquivo ```saml2-social/plugins/facebook_backend.yaml```
 
-3. **Execute a aplicação do SP (ASP.NET Core):**
+3. **Instalar dependência em ambiente virtual:**
+    ```bash
+    python3 -m venv .venv            
+    source .venv/bin/activate    
+    pip install --upgrade pip
+    pip install "satosa[gunicorn]"
+    ```
+
+4. **Execute a aplicação do SP (ASP.NET Core):**
 
     ```bash
     dotnet restore sp/saml-csharp.csproj
     dotnet run --project sp/saml-csharp.csproj
-
     ```
 
-4. **Inicie o SATOSA com Gunicorn usando o script de execução:**
+5. **Inicie o SATOSA com Gunicorn usando o script de execução:**
 
     ```bash
     chmod +x run.sh
